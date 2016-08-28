@@ -1,0 +1,11 @@
+<h1>All Your Recipes Are Belonging To Us</h1>
+
+<h2><% @recipes.each do |recipe| %></h2>
+
+<h2><%= recipe.title.titleize %></h2>
+<h5>Chef: <%= recipe.chef %></h5>
+<h5>Ingredients: <%= recipe.ingredients %></h5>
+<h5>Directions: <%= recipe.directions %></h5>
+<h5>Prep Time: <%= recipe.prep_time %></h5>
+
+<% end%>
