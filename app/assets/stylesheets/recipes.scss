@@ -2,8 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$main-color: red;
+// $main-color: red;
 
-h1 {
-  color: $main-color;
+// h1 {
+//   color: $main-color;
+// }
+body {
+  font-family: Copperplate,"Copperplate Gothic Light",fantasy;
+  background-image: url('asanoha-400px.png');
+}
+
+h2 a {
+  color: #060;
+}
+
+.index-list {
+  height: 500px;
+  background-color: rgba(50,50,0,0.1)
 }
