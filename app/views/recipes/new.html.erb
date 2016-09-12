@@ -5,23 +5,27 @@
     <%= label_tag :title %>
     <%= text_field_tag :title %>
   </div>
-    <div>
+  <div>
     <%= label_tag :chef %>
     <%= text_field_tag :chef %>
   </div>
-    <div>
+  <div>
     <%= label_tag :prep_time %>
     <%= text_field_tag :prep_time %>
   </div>
-    <div>
+  <div>
     <%= label_tag :ingredients %>
     <%= text_field_tag :ingredients %>
   </div>
-    <div>
+  <div>
     <%= label_tag :directions %>
     <%= text_field_tag :directions %>
   </div>
   <div>
-    <%= submit_tag "Let's Get Cooking!" %>
+    <%= label_tag :image %>
+    <%= text_field_tag :image %>
+  </div>
+  <div>
+    <%= submit_tag "Let's Get Cooking!", class: "btn btn-default" %>
   </div>
 <% end %>

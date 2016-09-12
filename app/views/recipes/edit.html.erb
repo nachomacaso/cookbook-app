@@ -5,21 +5,25 @@
     <%= label_tag :title %>
     <%= text_field_tag :title, @recipe.title %>
   </div>
-    <div>
+  <div>
     <%= label_tag :chef %>
     <%= text_field_tag :chef, @recipe.chef %>
   </div>
-    <div>
+  <div>
     <%= label_tag :prep_time %>
     <%= text_field_tag :prep_time, @recipe.prep_time %>
   </div>
-    <div>
+  <div>
     <%= label_tag :ingredients %>
     <%= text_field_tag :ingredients, @recipe.ingredients %>
   </div>
-    <div>
+  <div>
     <%= label_tag :directions %>
     <%= text_field_tag :directions, @recipe.directions %>
+  </div>
+  <div>
+    <%= label_tag :image %>
+    <%= text_field_tag :image, @recipe.image %>
   </div>
   <div>
     <%= submit_tag "Edit your recipe" %>

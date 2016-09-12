@@ -2,6 +2,12 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
     sort_attribute = params[:sort]
+    search_term = params[:search_term]
+
+    if search_term
+      fuzzy_search_term = "%#{search_term}%"
+      @recipes = @recipes.where("title ILIKE ?", fuzzy_search_term)
+    end
 
     if sort_attribute
       @recipes = @recipes.order(sort_attribute)
@@ -17,7 +23,8 @@ class RecipesController < ApplicationController
                             chef: params[:chef],
                             prep_time: params[:prep_time],
                             ingredients: params[:ingredients],
-                            directions: params[:directions])
+                            directions: params[:directions],
+                            image: params[:image])
     # Written individually
     # @recipe.title = params[:title]
     # @recipe.title = params[:chef]
@@ -59,7 +66,8 @@ class RecipesController < ApplicationController
                    chef: params[:chef],
                    prep_time: params[:prep_time],
                    ingredients: params[:ingredients],
-                   directions: params[:directions])
+                   directions: params[:directions],
+                   image: params[:image])
 
     flash[:success] = "Recipe Updated"
     # render '/recipes/:id'

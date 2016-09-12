@@ -1,22 +1,110 @@
-// Place all the styles related to the recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$bgDefault      : #58a14b;
+$bgHighlight    : #77c751;
+$colDefault     : #d7e8cf;
+$colHighlight   : #dfffdb;
+$dropDown       : false;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  height: 65px;
+  padding-top:7px;
+  .navbar-brand {
+    font-family: 'Anton', sans-serif;
+    font-size: 250%;
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefault;
+          > li {
+            > a {
+              color: $colDefault;
+              &:hover,  &:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+            > .divider {
+              background-color: $bgHighlight;}}}}}
+    @if $dropDown {
+      .open .dropdown-menu > .active {
+        > a, > a:hover, > a:focus {
+          color: $colHighlight;
+          background-color: $bgHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
 
-// $main-color: red;
-
-// h1 {
-//   color: $main-color;
-// }
 body {
-  font-family: Copperplate,"Copperplate Gothic Light",fantasy;
-  background-image: url('asanoha-400px.png');
+  font-family: "Century Gothic",CenturyGothic,AppleGothic,sans-serif;
+  background-image: url('upfeathers.png');
+}
+
+h1 {
+  font-weight: bold;
 }
 
 h2 a {
-  color: #060;
+  color: #58a14b;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+}
+
+h2 .image {
+  height: 300px;
+  width: 275px;
 }
 
 .index-list {
-  height: 500px;
-  background-color: rgba(50,50,0,0.1)
+  height: 800px;
+  background-color: #d7e8cf;
+}
+
+.show-list {
+  height: 800px;
+  background-color: #d7e8cf;
+}
+
+.container {
+  padding-top: 20px;
+  padding-bottom: 25px;
 }

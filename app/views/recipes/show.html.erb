@@ -1,12 +1,14 @@
-
+<div class="container">
   <h1><%= @recipe.title %></h1>
   <h3>By: <%= @recipe.chef %></h3>
+  <img src="<%= @recipe.image %>" alt="<%= @recipe.title %>">
   <h5>Time: <%= @recipe.prep_time %></h5>
   <h3>Ingredients: <%= @recipe.ingredients %></h3>
   <h3>Directions: <%= @recipe.directions %></h3>
 
   <br>
-  <%= link_to 'Edit', "/recipes/#{@recipe.id}/edit" %>
+  <%= link_to 'Edit', "/recipes/#{@recipe.id}/edit", class: "btn btn-default" %>
   <br>
-  <%= link_to 'Delete', "/recipes/#{@recipe.id}", method: :delete %>
+  <br>
+  <%= link_to 'Delete', "/recipes/#{@recipe.id}", method: :delete, class: "btn btn-default" %>
 </div>
