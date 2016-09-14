@@ -35,11 +35,15 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/recipes/new">New Recipe</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown Menu<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="/recipes?sort=prep_time">Sort By Prep Time</a></li>
                 <li><a href="/recipes?sort=title">Sort By Title</a></li>
                 <li><a href="/recipes?sort=chef">Sort By Chef</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a heref="/signup">Sign Up</a></li>
+                <li><a heref="/login">Log in</a></li>
+                <li><%= link_to 'Log Out', '/logout', method: :delete %></li>
               </ul>
             </li>
           </ul>
@@ -49,7 +53,7 @@
 
     <div class="container">
       <% flash.each do |name, message| %>
-        <div class="alert alert-<%=name %> alert-dismissible" role="alert">
+        <div class="alert alert-<%= name %> alert-dismissible" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <%= message %>
         </div>
