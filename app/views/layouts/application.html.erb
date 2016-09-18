@@ -22,6 +22,9 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/recipes">Crockpot Master</a>
+          <% if current_user %>
+            <a class="navbar-text">Welcome <%= current_user.name.titleize %> !</a>
+          <% end %>
         </div>
 
         <%= form_tag '/recipes', method: :get, class: "navbar-form navbar-left" do %>
@@ -41,24 +44,17 @@
                 <li><a href="/recipes?sort=title">Sort By Title</a></li>
                 <li><a href="/recipes?sort=chef">Sort By Chef</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a heref="/signup">Sign Up</a></li>
-                <li><a heref="/login">Log in</a></li>
-                <li><%= link_to 'Log Out', '/logout', method: :delete %></li>
+                <% if current_user %>
+                  <li><%= link_to 'Log Out', '/logout', method: :delete %></li>
+                <% else %>
+                  <li><a href="/signup">Sign Up</a></li>
+                  <li><a href="/login">Log in</a></li>
+                <% end %>
               </ul>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-
-    <div class="container">
-      <% flash.each do |name, message| %>
-        <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <%= message %>
-        </div>
-      <% end %>
-      <%= yield %>
-    </div>
   </body>
 </html>
